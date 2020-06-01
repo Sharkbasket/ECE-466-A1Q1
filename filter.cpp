@@ -3,7 +3,7 @@
 
 
 void filter::produce_output() {
-    y->write((s2.read() * 2.4) + (s4.read() * 0.2) + (s5.read() * 0.25));
+    y->write((s2.read() * 0.24) + (s4.read() * 0.2) + (s5.read() * 0.25));
 }
 
 
