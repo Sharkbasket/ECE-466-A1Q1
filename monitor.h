@@ -1,5 +1,5 @@
 #include "systemc.h"
-
+#include <iostream>
 
 SC_MODULE(monitor) {
     // Ports
