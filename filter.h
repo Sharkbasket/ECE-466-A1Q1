@@ -26,6 +26,5 @@ SC_MODULE(filter) {
         
         SC_CTHREAD(clock_thread, clock.pos());
         reset_signal_is(reset, true);
-        dont_initialize();
     }
 };

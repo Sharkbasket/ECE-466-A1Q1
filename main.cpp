@@ -36,8 +36,9 @@ int sc_main(int argc, char* argv[]) {
     sc_trace(tf, clock, "clock");
     
     // Print column headers
-    std::cout << setw(15) << "timestamp" 
-              << setw(15) << "X" << setw(15) << "Y" << endl << endl;
+    std::cout << std::setw(15) << "timestamp" 
+              << std::setw(15) << "X"
+              << std::setw(15) << "Y" << endl << endl;
     
     sc_start(130, SC_NS);
     sc_close_vcd_trace_file(tf);

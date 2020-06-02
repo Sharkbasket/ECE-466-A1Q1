@@ -1,5 +1,6 @@
 #include "systemc.h"
 #include <iostream>
+#include <iomanip>
 
 SC_MODULE(monitor) {
     // Ports
@@ -12,6 +13,5 @@ SC_MODULE(monitor) {
     // Constructor
     SC_CTOR(monitor) {
         SC_CTHREAD(report_values, clock.pos());
-        dont_initialize();
     }
 };
