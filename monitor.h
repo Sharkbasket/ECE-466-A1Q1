@@ -2,16 +2,17 @@
 #include <iostream>
 #include <iomanip>
 
-SC_MODULE(monitor) {
+
+// Monitor module for reporting signal values to console.
+SC_MODULE(monitor)
+{
     // Ports
     sc_in<float> x, y;
     sc_in_clk clock;
     
+    // Constructor
+    monitor(sc_module_name n);
+    
     // Processes
     void report_values();
-    
-    // Constructor
-    SC_CTOR(monitor) {
-        SC_CTHREAD(report_values, clock.pos());
-    }
 };

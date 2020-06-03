@@ -4,7 +4,8 @@
 #include "monitor.h"
 
 
-int sc_main(int argc, char* argv[]) {
+int sc_main(int argc, char* argv[])
+{
     // Channels
     sc_signal<float> x, y;
     sc_signal<bool> reset;
@@ -40,6 +41,7 @@ int sc_main(int argc, char* argv[]) {
               << std::setw(15) << "X"
               << std::setw(15) << "Y" << endl << endl;
     
+    // Run simulation for 130 ns
     sc_start(130, SC_NS);
     sc_close_vcd_trace_file(tf);
     

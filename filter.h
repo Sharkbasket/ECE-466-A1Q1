@@ -1,6 +1,7 @@
 #include "systemc.h"
 
 
+// Behavioural model of a digital filter
 SC_MODULE(filter)
 {
     // Ports

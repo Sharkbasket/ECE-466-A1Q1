@@ -2,6 +2,7 @@
 #include "filter.h"
 
 
+// Constructor
 SC_HAS_PROCESS(filter);
 filter::filter(sc_module_name n) : sc_module(n)
 {
@@ -16,12 +17,14 @@ filter::filter(sc_module_name n) : sc_module(n)
 }
 
 
+// Compute filter output from the outputs of delay registers.
 void filter::produce_output()
 {
     y->write((s2.read() * 0.24) + (s4.read() * 0.2) + (s5.read() * 0.25));
 }
 
 
+// Compute inputs to delay registers.
 void filter::handle_input()
 {
     s1.write(x->read() + (s2.read() * 0.4));
@@ -29,6 +32,7 @@ void filter::handle_input()
 }
 
 
+// Simulate delay registers. Transfer inputs to outputs on clock edges.
 void filter::clock_thread()
 {
     // Reset actions
@@ -42,7 +46,6 @@ void filter::clock_thread()
     
     while (true)
     {
-        // Read current inputs
         s2.write(s1.read());
         s4.write(s3.read());
         s5.write(s4.read());
